@@ -7,6 +7,9 @@ export default {
       fontFamily:{
         'sans':[ 'Inter', 'system-ui', 'Avenir',' Helvetica', 'Arial', 'sans-serif']
       },
+      maxWidth:{
+        '1000px':'1000px'
+      }
     },
   },
   plugins: [],
