@@ -9,7 +9,8 @@ export default {
       },
       maxWidth:{
         '1000px':'1000px'
-      }
+      },
+      
     },
   },
   plugins: [],
