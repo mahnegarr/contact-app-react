@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   html {
     @apply scroll-smooth font-sans p-0 m-0 box-border ;
