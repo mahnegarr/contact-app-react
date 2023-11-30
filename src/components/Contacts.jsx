@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 function Contacts() {
+  const [contacts, setContacts] = useState([]);
   const [contact, setContact] = useState({
     name: "",
     lastName: "",
@@ -15,7 +16,10 @@ function Contacts() {
     setContact((contact) => ({ ...contact, [name]: value }));
   };
 
-  const addHandler = (event) => {};
+  const addHandler = () => {
+    setContacts((contacts) => [...contacts, contact]);
+    console.log(contacts);
+  };
   return (
     <div className="flex items-center justify-center">
       <input
