@@ -49,13 +49,14 @@ function Contacts() {
     <>
       <div className="flex flex-col items-center justify-center bg-slate-400 h-[180px] rounded-[1rem]">
         <div className="grid grid-cols-2 gap-4 grid-rows-2 mb-4">
-          {inputs.map((input) => (
+          {inputs.map((input,index) => (
             <input
               className="rounded-[.3rem] w-[430px] h-9 border-[3px] hover:outline-none focus:outline-none focus:border-[#0a20a0] placeholder:pl-4"
+              key={index}
               type={input.type}
               name={input.name}
               placeholder={input.placeholder}
-              value={contact[name]}
+              value={contact[input.name]}
               onChange={changeHandler}
             />
           ))}
