@@ -2,6 +2,13 @@ import React, { useState } from "react";
 
 import ContactsList from "./ContactsList";
 
+const inputs = [
+  { type: "text", placeholder: "Name", name: "name" },
+  { type: "text", placeholder: "last Name", name: "lastName" },
+  { type: "email", placeholder: "Email", name: "email" },
+  { type: "number", placeholder: "Phone", name: "phone" },
+];
+
 function Contacts() {
   const [contacts, setContacts] = useState([]);
   const [alert, setAlert] = useState("");
@@ -29,7 +36,7 @@ function Contacts() {
       setAlert("Please enter a valid data!");
       return;
     }
-    setAlert("")
+    setAlert("");
     setContacts((contacts) => [...contacts, contact]);
     setContact({
       name: "",
@@ -42,38 +49,15 @@ function Contacts() {
     <>
       <div className="flex flex-col items-center justify-center bg-slate-400 h-[180px] rounded-[1rem]">
         <div className="grid grid-cols-2 gap-4 grid-rows-2 mb-4">
-          <input
-            className="rounded-[.3rem] w-[430px] h-9 border-[3px] hover:outline-none focus:outline-none focus:border-[#0a20a0] placeholder:pl-4"
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={contact.name}
-            onChange={changeHandler}
-          />
-          <input
-            className="rounded-[.3rem] border-[3px] hover:outline-none focus:outline-none focus:border-[#0a20a0] placeholder:pl-4"
-            type="text"
-            placeholder="Last Name"
-            name="lastName"
-            value={contact.lastName}
-            onChange={changeHandler}
-          />
-          <input
-            className="rounded-[.3rem] border-[3px] hover:outline-none focus:outline-none focus:border-[#0a20a0] placeholder:pl-4"
-            type="text"
-            placeholder="Email"
-            name="email"
-            value={contact.email}
-            onChange={changeHandler}
-          />
-          <input
-            className="rounded-[.3rem] border-[3px] hover:outline-none focus:outline-none focus:border-[#0a20a0] placeholder:pl-4"
-            type="number"
-            placeholder="Phone"
-            name="phone"
-            value={contact.phone}
-            onChange={changeHandler}
-          />
+          {inputs.map((input) => (
+            <input
+              type={input.type}
+              name={input.name}
+              placeholder={input.placeholder}
+              value={contact[name]}
+              onChange={changeHandler}
+            />
+          ))}
         </div>
         <div>
           <button className="w-full bg-neutral-300" onClick={addHandler}>
@@ -81,9 +65,7 @@ function Contacts() {
           </button>
         </div>
       </div>
-      <div>
-        {alert && <p className="text-red-700 font-medium">{alert}</p>}
-      </div>
+      <div>{alert && <p className="text-red-700 font-medium">{alert}</p>}</div>
       <ContactsList contacts={contacts} />
     </>
   );
