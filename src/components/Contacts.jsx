@@ -42,8 +42,8 @@ function Contacts() {
   };
   return (
     <>
-      <div className="flex flex-col items-center justify-center bg-slate-400 h-[180px] rounded-[1rem]">
-        <div className="grid grid-cols-2 gap-4 grid-rows-2 mb-4">
+      <div className="flex flex-col items-center justify-center bg-slate-400 h-[200px] rounded-[1rem] ">
+        <div className="grid grid-cols-2 gap-4 grid-rows-2 pb-5 ">
           {inputs.map((input,index) => (
             <input
               className="rounded-[.3rem] w-[430px] h-9 border-[3px] hover:outline-none focus:outline-none focus:border-[#0a20a0] placeholder:pl-4"
@@ -56,8 +56,8 @@ function Contacts() {
             />
           ))}
         </div>
-        <div>
-          <button className="w-full bg-neutral-300" onClick={addHandler}>
+        <div >
+          <button className="w-full bg-[#0a20a0] text-white cursor-pointer px-[390px] py-2 rounded-[10px] " onClick={addHandler}>
             Add Contact
           </button>
         </div>
