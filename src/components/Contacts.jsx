@@ -51,6 +51,7 @@ function Contacts() {
         <div className="grid grid-cols-2 gap-4 grid-rows-2 mb-4">
           {inputs.map((input) => (
             <input
+              className="rounded-[.3rem] w-[430px] h-9 border-[3px] hover:outline-none focus:outline-none focus:border-[#0a20a0] placeholder:pl-4"
               type={input.type}
               name={input.name}
               placeholder={input.placeholder}
