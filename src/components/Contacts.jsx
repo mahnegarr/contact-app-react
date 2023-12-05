@@ -2,12 +2,13 @@ import React, { useState } from "react";
 
 import ContactsList from "./ContactsList";
 
-import inputs from "../constants/inputs.js"
-
+import inputs from "../constants/inputs.js";
+import { v4 } from "uuid";
 function Contacts() {
   const [contacts, setContacts] = useState([]);
   const [alert, setAlert] = useState("");
   const [contact, setContact] = useState({
+    id: "",
     name: "",
     lastName: "",
     email: "",
@@ -32,7 +33,8 @@ function Contacts() {
       return;
     }
     setAlert("");
-    setContacts((contacts) => [...contacts, contact]);
+    const newContact = { ...contact, id: v4() };
+    setContacts((contacts) => [...contacts, newContact]);
     setContact({
       name: "",
       lastName: "",
@@ -44,7 +46,7 @@ function Contacts() {
     <>
       <div className="flex flex-col items-center justify-center bg-slate-400 h-[200px] rounded-[1rem] ">
         <div className="grid grid-cols-2 gap-4 grid-rows-2 pb-5 ">
-          {inputs.map((input,index) => (
+          {inputs.map((input, index) => (
             <input
               className="rounded-[.3rem] w-[430px] h-9 border-[3px] hover:outline-none focus:outline-none focus:border-[#0a20a0] placeholder:pl-4 focus:"
               key={index}
@@ -56,8 +58,11 @@ function Contacts() {
             />
           ))}
         </div>
-        <div >
-          <button className="w-full bg-[#0a20a0] text-white cursor-pointer px-[390px] py-2 rounded-[10px] " onClick={addHandler}>
+        <div>
+          <button
+            className="w-full bg-[#0a21a7] text-white cursor-pointer px-[390px] py-2 rounded-[10px] "
+            onClick={addHandler}
+          >
             Add Contact
           </button>
         </div>
