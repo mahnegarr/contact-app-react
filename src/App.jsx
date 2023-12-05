@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "./components/Header";
-import Contacts from "./components/Contacts";
+import HeaderBU from "./components/HeaderBU";
+import ContactsBU from "./components/ContactsBU";
 function App() {
   return (
     <>
-      <Header />
-      <Contacts/>
+      <HeaderBU />
+      <ContactsBU />
     </>
   );
 }

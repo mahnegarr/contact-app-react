@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-
 import ContactsList from "./ContactsList";
-
 import inputs from "../constants/inputs.js";
 import { v4 } from "uuid";
+
 function Contacts() {
   const [contacts, setContacts] = useState([]);
   const [alert, setAlert] = useState("");
