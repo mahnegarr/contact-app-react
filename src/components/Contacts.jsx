@@ -52,7 +52,7 @@ function Contacts() {
         <div className="grid grid-cols-2 gap-4 grid-rows-2 pb-5 ">
           {inputs.map((input, index) => (
             <input
-              className="rounded-[.3rem] w-[430px] h-9 border-[3px] hover:outline-none focus:outline-none focus:border-[#0a20a0] placeholder:pl-4 focus:"
+              className="rounded-[.3rem] w-[430px] h-9 border-[3px] hover:outline-none focus:outline-none focus:border-[#0a20a0] pl-4"
               key={index}
               type={input.type}
               name={input.name}
