@@ -1,8 +1,9 @@
 import React from "react";
 
-
-function ContactItem({data : {id,name,lastName,phone,email}}) {
-
+function ContactItem({
+  data: { id, name, lastName, phone, email },
+  setContacts,
+}) {
   return (
     <li
       className="rounded-[8px] grid grid-cols-5 grid-rows-1 mb-3 p-3  bg-slate-200"
@@ -20,9 +21,12 @@ function ContactItem({data : {id,name,lastName,phone,email}}) {
         <p className=" mt-1">{phone}</p>
       </p>
       <p>
-        <span className="bg-white rounded-[50%] py-1 px-2 float-right mr-2 cursor-pointer ">
+        <button
+          className="bg-white rounded-[50%] py-1 px-2 float-right mr-2 cursor-pointer "
+          onClick={deleteHandler}
+        >
           🗑
-        </span>
+        </button>
       </p>
     </li>
   );

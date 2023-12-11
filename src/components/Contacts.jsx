@@ -41,6 +41,11 @@ function Contacts() {
       phone: "",
     });
   };
+
+  const deleteHandler = (id) => {
+    const newContacts = contacts.filter((contact) => contact.id !== id);
+    setContacts(newContacts);
+  };
   return (
     <>
       <div className="flex flex-col items-center justify-center bg-slate-400 h-[200px] rounded-[1rem] ">
@@ -67,7 +72,7 @@ function Contacts() {
         </div>
       </div>
       <div>{alert && <p className="text-red-700 font-medium">{alert}</p>}</div>
-      <ContactsList contacts={contacts} />
+      <ContactsList contacts={contacts} deleteHandler={deleteHandler} />
     </>
   );
 }
