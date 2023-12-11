@@ -2,7 +2,7 @@ import React from "react";
 
 function ContactItem({
   data: { id, name, lastName, phone, email },
-  setContacts,
+  deleteHandler,
 }) {
   return (
     <li
