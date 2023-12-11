@@ -23,7 +23,7 @@ function ContactItem({
       <p>
         <button
           className="bg-white rounded-[50%] py-1 px-2 float-right mr-2 cursor-pointer "
-          onClick={deleteHandler}
+          onClick={() => deleteHandler(id)}
         >
           🗑
         </button>
